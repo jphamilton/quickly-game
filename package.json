@@ -12,16 +12,16 @@
   "license": "MIT",
   "devDependencies": {
     "@types/howler": "^2.0.2",
-    "@types/pixi.js": "^4.4.4",
-    "@types/three": "^0.84.7",
-    "file-loader": "0.11.1",
-    "ts-loader": "2.0.3",
-    "typescript": "2.3.2",
-    "webpack": "2.4.1"
+    "@types/pixi.js": "^4.5.0",
+    "@types/three": "^0.84.12",
+    "file-loader": "0.11.2",
+    "ts-loader": "2.1.0",
+    "typescript": "2.3.4",
+    "webpack": "2.6.1"
   },
   "dependencies": {
-    "howler": "^2.0.3",
-    "pixi.js": "^4.5.1",
+    "howler": "^2.0.4",
+    "pixi.js": "^4.5.3",
     "three": "^0.85.2"
   }
 }
