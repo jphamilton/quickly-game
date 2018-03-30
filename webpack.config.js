@@ -12,24 +12,15 @@ function getPlugins() {
         })
     ];
 
-    if (isProd) {
-        plugins.push(new webpack.optimize.UglifyJsPlugin({
-            minimize: true,
-            sourceMap: false,
-            output: {
-                comments: false
-            },
-            compressor: {
-                warnings: false
-            }
-        }));
-    }
-
     return plugins;
 }
 
-module.exports = {  
+const config = {  
+  mode: isProd ? 'production' : 'development',
   entry: './src/index.ts',
+  optimization: {
+    minimize: false
+  },
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'index.js',
@@ -40,9 +31,15 @@ module.exports = {
   },
   plugins: getPlugins(),
   module: {
-    loaders: [
+    rules: [
       { test: /\.ts$/, loader: 'ts-loader' },
       { test: /\.wav/, loader: 'file-loader' }
     ]
   }
+};
+
+if (isProd) {
+    config.optimization.minimize = true;
 }
+
+module.exports = config;
